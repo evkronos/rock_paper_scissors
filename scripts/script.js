@@ -63,9 +63,11 @@ function playGame() {
 
     for (let i = 0; i < 5; i++) {
         console.log("Round " + (i + 1))
-        // armazenar valores retornados das funções getHumanChoice e getComputerChoice
+        // armazenar valores escolhidos através das funções getHumanChoice e getComputerChoice
         const humanSelection = getHumanChoice();
         const computerSelection = getComputerChoice();
+
+        // passar valores escolhidos como parâmetros para a função playRound()
         playRound(humanSelection, computerSelection);
     }
 
