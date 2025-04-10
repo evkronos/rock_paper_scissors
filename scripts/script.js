@@ -30,12 +30,6 @@ function getHumanChoice() {
 }
 
 
-
-// armazenar valores retornados das funções getHumanChoice e getComputerChoice
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
-
-
 function playGame() {
     // armazenar pontuação do humano 
     let humanScore = 0;
@@ -44,9 +38,6 @@ function playGame() {
 
 
     function playRound(humanChoice, computerChoice) {
-        humanChoice = getHumanChoice();
-        computerChoice = getComputerChoice();
-
         if (humanChoice === computerChoice) {
             console.log("Empate");
         } else if (humanChoice === "pedra" && computerChoice === "papel") {
@@ -71,14 +62,25 @@ function playGame() {
     }
 
     for (let i = 0; i < 5; i++) {
+        console.log("Round " + (i + 1))
+        // armazenar valores retornados das funções getHumanChoice e getComputerChoice
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
         playRound(humanSelection, computerSelection);
-        console.log(i);
     }
 
     function showResult() {
         console.log("Pontuação")
         console.log("Humano: " + humanScore)
         console.log("Computador: " + computerScore)
+
+        if (humanScore > computerScore) {
+            console.log("Você venceu o jogo");
+        } else if (humanScore < computerScore) {
+            console.log("Você perdeu o jogo");
+        } else {
+            console.log("Empate");
+        }
     }
 
     showResult();
