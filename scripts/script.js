@@ -88,7 +88,7 @@ function playRound(humanChoice, computerChoice) {
         computerScore += 1;
         resultadoRound.textContent = "Você perdeu! Pedra vence tesoura";
     } else if (humanChoice === "tesoura" && computerChoice === "papel") {
-        computerScore += 1;
+        humanScore += 1;
         resultadoRound.textContent = "Você venceu! Tesoura vence papel";
     }
 }
